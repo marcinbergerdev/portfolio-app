@@ -1,0 +1,29 @@
+*,
+*::after,
+*::before {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+:root {
+   font-size: 10px;
+   font-family: sans-serif;
+
+   --white: #000000;
+}
+
+#app {
+   width: 100%;
+   height: 100vh;
+   color: var(--white);
+}
+
+a {
+   text-decoration: none;
+   color: var(--white);
+}
+
+ul > li {
+   list-style: none;
+}

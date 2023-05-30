@@ -1,13 +1,11 @@
 <template>
-  <div>
-
-  </div>
+  <NavContainer></NavContainer>
 </template>
 
 <script setup lang="ts">
-
+import NavContainer from "./components/nav/NavContainer.vue";
 </script>
 
-<style scoped>
+<style lang="scss">
 
 </style>
