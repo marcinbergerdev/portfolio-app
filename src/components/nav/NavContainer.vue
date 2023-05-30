@@ -1,14 +1,11 @@
 <template>
   <nav>
-  
-  <NavList></NavList>
-  
+    <NavList></NavList>
   </nav>
 </template>
 
 <script setup lang="ts">
-import NavList from './NavList.vue';
-
+import NavList from "./NavList.vue";
 </script>
 
 <style scoped></style>

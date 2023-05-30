@@ -16,14 +16,14 @@ import { Options } from "../../types/Options";
 import { ref } from "vue";
 
 const options = ref<Options[]>([
-  { id: 1, name: "about me", path: "#" },
-  { id: 2, name: "projects", path: "#" },
+  { id: 1, name: "about me", path: "/about" },
+  { id: 2, name: "projects", path: "/projects" },
   {
     id: 3,
     name: "github",
     path: "https://github.com/marcinbergerdev",
   },
-  { id: 4, name: "contact", path: "#" },
+  { id: 4, name: "contact", path: "/contact" },
 ]);
 </script>
 
