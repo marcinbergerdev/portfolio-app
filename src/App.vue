@@ -26,7 +26,8 @@ import NavContainer from "./components/nav/NavContainer.vue";
 }
 
 .content-container {
-  
+  flex: 1;
+  background-color: cadetblue;
 }
 
 </style>
