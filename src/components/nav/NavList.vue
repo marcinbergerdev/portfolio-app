@@ -27,4 +27,14 @@ const options = ref<Options[]>([
 ]);
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.nav-list{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4rem;
+  padding: 4rem 1.5rem;
+}
+
+</style>

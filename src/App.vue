@@ -1,6 +1,7 @@
 <template>
   <div class="app-container">
     <NavContainer></NavContainer>
+    <HamburgerButton></HamburgerButton>
 
     <main class="content-container">
       <router-view v-slot="{ Component }">
@@ -14,6 +15,8 @@
 
 <script setup lang="ts">
 import NavContainer from "./components/nav/NavContainer.vue";
+import HamburgerButton from "./components/hamburger/HamburgerButton.vue";
+
 </script>
 
 <style lang="scss">

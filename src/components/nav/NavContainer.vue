@@ -12,6 +12,29 @@ import NavList from "./NavList.vue";
 
 <style scoped lang="scss">
 .nav-container {
-  background-color: gray;
+  display: flex;
+  flex-direction: column;
+
+  position: absolute;
+  top: 0;
+  transform: translateX(-20rem);
+
+  width: min(20rem, 100%);
+  height: 100%;
+
+  overflow: auto;
+  background-color: var(--black);
+  transition: transform 0.15s ease-in-out;
+
+  @media (width >= 768px) {
+    position: static;
+    transform: none;
+    transition: all 0s ease 0s;
+  }
+}
+
+.opened {
+  transform: translateX(0);
+  transition: 0.15s ease-in-out;
 }
 </style>

@@ -16,7 +16,7 @@ defineProps<{
 }>();
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .nav-item {
   position: relative;
   font-size: 2rem;
