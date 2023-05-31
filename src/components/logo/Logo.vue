@@ -20,11 +20,11 @@
 
 .glitch {
   position: relative;
-  margin: 0 auto;
-  font-size: 1.6rem;
+  display: block;
+  font-size: 2rem;
   text-shadow: 0px -0px 3px rgba(255, 255, 255, 1);
-  animation: noise-anim 3s infinite linear alternate-reverse,
-    shift 5s ease-in-out infinite alternate, blur 8s ease-in-out infinite alternate;
+  animation: noise-anim 3s 6s infinite linear alternate-reverse,
+    shift 4s 6s ease-in-out infinite alternate, blur 8s 6s ease-in-out infinite alternate;
   transform: skewX(0deg);
 
   @media (width >= 768px) {
@@ -39,8 +39,8 @@
   color: transparent;
   background: transparent;
   clip: rect(0, 900px, 0, 0);
-  animation: noise-anim 3s infinite linear alternate-reverse,
-    shift 5s ease-in-out infinite alternate;
+  animation: noise-anim 3s 6s infinite linear alternate-reverse,
+    shift 4s 6s ease-in-out infinite alternate;
   transform: skewX(0deg);
   overflow: hidden;
   opacity: 0.8;
@@ -88,29 +88,28 @@
 }
 
 @keyframes shift {
-  100% {
-    transform: skewX(0deg);
-  }
   41% {
-    transform: skewX(10deg);
+    transform: skewX(5deg);
   }
   42% {
-    transform: skewX(-10deg);
+    transform: skewX(-5deg);
   }
   59% {
-    transform: skewX(40deg) skewY(10deg);
+    transform: skewX(10deg) skewY(3deg);
   }
   60% {
-    transform: skewX(-40deg) skewY(-10deg);
+    transform: skewX(-5deg) skewY(-5deg);
   }
-  63% {
-    transform: skewX(10deg) skewY(-5deg);
-  }
+
   70% {
-    transform: skewX(-50deg) skewY(-20deg);
+    transform: skewX(-8deg) skewY(-4deg);
+    transform: scale(1.1);
   }
-  71% {
-    transform: skewX(10deg) skewY(-10deg);
+  80% {
+    transform: scale(1);
+  }
+  100% {
+    transform: skewX(0deg);
   }
 }
 </style>

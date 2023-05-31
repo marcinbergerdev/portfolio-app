@@ -19,6 +19,7 @@ defineProps<{
 <style scoped lang="scss">
 .nav-item {
   position: relative;
+  padding-left: 1rem;
   font-size: 2rem;
   overflow: hidden;
 }
