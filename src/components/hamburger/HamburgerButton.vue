@@ -1,5 +1,11 @@
 <template>
-  <button class="hamburger-box" v-if="isHamburger" aria-label="Main Menu">
+  <button
+    class="hamburger-box"
+    :class="isHamburgerActive"
+    v-if="isHamburgerVisible"
+    @click="menu.toggleMenuHandler"
+    aria-label="Main Menu"
+  >
     <svg width="40" height="40" viewBox="0 0 100 100">
       <path
         class="hamburger-line top"
@@ -16,13 +22,17 @@
 
 <script setup lang="ts">
 import { useWindowSize } from "@vueuse/core";
-// import { useToggleMenu } from "../../store/ToggleMenu";
+import { useToggleMenu } from "../../store/ToggleMenu";
 import { computed } from "vue";
 
 const { width } = useWindowSize();
-// const menu = useToggleMenu();
+const menu = useToggleMenu();
 
-const isHamburger = computed<boolean>(() => {
+const isHamburgerActive = computed<object>(() => {
+  return { opened: menu.isOpen };
+});
+
+const isHamburgerVisible = computed<boolean>(() => {
   return width.value >= 768 ? false : true;
 });
 </script>

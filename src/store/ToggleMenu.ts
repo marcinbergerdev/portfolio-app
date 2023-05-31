@@ -4,7 +4,7 @@ import {ref, computed } from 'vue';
 
 export const useToggleMenu = defineStore('toggleMenu', () => {
 
-  const isOpen = ref(false);
+  const isOpen = ref<boolean>(false);
 
 
 
@@ -15,10 +15,10 @@ export const useToggleMenu = defineStore('toggleMenu', () => {
     isOpen.value = true;
   }
   const closeMenuHandler = () => {
-    isOpen.value = true;
+    isOpen.value = false;
   }
   const toggleMenuHandler = () => {
-    isOpen.value = true;
+    isOpen.value = !isOpen.value;
   }
 
 
