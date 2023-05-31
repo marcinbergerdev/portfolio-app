@@ -1,5 +1,5 @@
 <template>
-  <button class="hamburger-box" aria-label="Main Menu">
+  <button class="hamburger-box" v-if="isHamburger" aria-label="Main Menu">
     <svg width="40" height="40" viewBox="0 0 100 100">
       <path
         class="hamburger-line top"
@@ -14,13 +14,25 @@
   </button>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useWindowSize } from "@vueuse/core";
+// import { useToggleMenu } from "../../store/ToggleMenu";
+import { computed } from "vue";
+
+const { width } = useWindowSize();
+// const menu = useToggleMenu();
+
+const isHamburger = computed<boolean>(() => {
+  return width.value >= 768 ? false : true;
+});
+</script>
 
 <style scoped lang="scss">
 .hamburger-box {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 100;
   display: flex;
   padding: 0;
   border: none;
