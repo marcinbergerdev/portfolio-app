@@ -16,21 +16,22 @@
 <script setup lang="ts">
 import NavContainer from "./components/nav/NavContainer.vue";
 import HamburgerButton from "./components/hamburger/HamburgerButton.vue";
-
 </script>
 
 <style lang="scss">
-
 .app-container {
   width: 100%;
   height: 100vh;
   display: flex;
-  flex-direction: row;
 }
 
 .content-container {
   flex: 1;
-  background-color: cadetblue;
-}
+  margin-top: 10rem;
+  text-align: center;
 
+  @media (width >= 768px) {
+    margin: 0;
+  }
+}
 </style>

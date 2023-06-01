@@ -28,7 +28,7 @@ onMounted(() => {
     context.fillStyle = "rgba(0, 0, 0, 0.05)";
     context.fillRect(0, 0, canvas.width, canvas.height);
 
-    context.fillStyle = "#00edf5";
+    context.fillStyle = "#006fff";
     context.font = fontSize + "px monospace";
 
     for (let i = 0; i < rainDrops.length; i++) {
@@ -54,6 +54,6 @@ onMounted(() => {
   z-index: 0;
   width: 100%;
   height: 100vh;
-  opacity: 0.3;
+  opacity: 0.4;
 }
 </style>
