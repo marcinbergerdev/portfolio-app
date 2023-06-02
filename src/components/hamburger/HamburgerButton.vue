@@ -39,14 +39,15 @@ const isHamburgerVisible = computed<boolean>(() => {
 
 <style scoped lang="scss">
 .hamburger-box {
-  position: absolute;
+  position: fixed;
   top: 1.5rem;
   right: 1.5rem;
   z-index: 100;
   display: flex;
   padding: 0;
   border: none;
-  background-color: transparent;
+  background-color: var(--black);
+  border-radius: 35%;
   cursor: pointer;
 }
 .hamburger-line {
