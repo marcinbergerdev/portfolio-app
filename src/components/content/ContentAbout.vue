@@ -3,56 +3,11 @@
     <header class="about-header">
       <h2 class="about-header__title">about me</h2>
       <p class="about-header__description">
-        I have a very creative mind. My many interests and hobbies allow me to
-        to look at each problem from a broader perspective, they allow me to think
-        unconventionally, and thus generate an advantage over the competition. "Brightly
-        the outlined goal is my priority. I believe it was delivered on time, high
-        quality work is the key to real company results.
-        I have a very creative mind. My many interests and hobbies allow me to
-        to look at each problem from a broader perspective, they allow me to think
-        unconventionally, and thus generate an advantage over the competition. "Brightly
-        the outlined goal is my priority. I believe it was delivered on time, high
-        quality work is the key to real company results.
-        I have a very creative mind. My many interests and hobbies allow me to
-        to look at each problem from a broader perspective, they allow me to think
-        unconventionally, and thus generate an advantage over the competition. "Brightly
-        the outlined goal is my priority. I believe it was delivered on time, high
-        quality work is the key to real company results.
-        I have a very creative mind. My many interests and hobbies allow me to
-        to look at each problem from a broader perspective, they allow me to think
-        unconventionally, and thus generate an advantage over the competition. "Brightly
-        the outlined goal is my priority. I believe it was delivered on time, high
-        quality work is the key to real company results.
-        I have a very creative mind. My many interests and hobbies allow me to
-        to look at each problem from a broader perspective, they allow me to think
-        unconventionally, and thus generate an advantage over the competition. "Brightly
-        the outlined goal is my priority. I believe it was delivered on time, high
-        quality work is the key to real company results.
-        I have a very creative mind. My many interests and hobbies allow me to
-        to look at each problem from a broader perspective, they allow me to think
-        unconventionally, and thus generate an advantage over the competition. "Brightly
-        the outlined goal is my priority. I believe it was delivered on time, high
-        quality work is the key to real company results.
-        I have a very creative mind. My many interests and hobbies allow me to
-        to look at each problem from a broader perspective, they allow me to think
-        unconventionally, and thus generate an advantage over the competition. "Brightly
-        the outlined goal is my priority. I believe it was delivered on time, high
-        quality work is the key to real company results.
-        I have a very creative mind. My many interests and hobbies allow me to
-        to look at each problem from a broader perspective, they allow me to think
-        unconventionally, and thus generate an advantage over the competition. "Brightly
-        the outlined goal is my priority. I believe it was delivered on time, high
-        quality work is the key to real company results.
-        I have a very creative mind. My many interests and hobbies allow me to
-        to look at each problem from a broader perspective, they allow me to think
-        unconventionally, and thus generate an advantage over the competition. "Brightly
-        the outlined goal is my priority. I believe it was delivered on time, high
-        quality work is the key to real company results.
-        I have a very creative mind. My many interests and hobbies allow me to
-        to look at each problem from a broader perspective, they allow me to think
-        unconventionally, and thus generate an advantage over the competition. "Brightly
-        the outlined goal is my priority. I believe it was delivered on time, high
-        quality work is the key to real company results.
+        I have a very creative mind. My many interests and hobbies allow me to to look at
+        each problem from a broader perspective, they allow me to think unconventionally,
+        and thus generate an advantage over the competition. "Brightly the outlined goal
+        is my priority. I believe it was delivered on time, high quality work is the key
+        to real company results.
       </p>
     </header>
 
@@ -94,7 +49,6 @@ const skills = ref([
   padding: 0 2rem;
   &__title {
     font-size: 3rem;
-  
   }
 
   &__description {
