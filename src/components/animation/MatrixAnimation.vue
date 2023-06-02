@@ -6,9 +6,9 @@
 import { onMounted } from "vue";
 
 onMounted(() => {
-  const latin: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  const nums: string = "0123456789";
-  const alphabet: string = latin + nums;
+  const latin: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ@!#$%&(){}:<>?/|\-+,;";
+  const numbers: string = "0123456789";
+  const alphabet: string = latin + numbers;
 
   const canvas: any = document.getElementById("Matrix");
   const context: any = canvas.getContext("2d");

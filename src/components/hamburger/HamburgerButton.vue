@@ -43,8 +43,9 @@ const isHamburgerVisible = computed<boolean>(() => {
   top: 1.5rem;
   right: 1.5rem;
   z-index: 100;
+
   display: flex;
-  padding: 0;
+  padding: 0.5rem;
   border: none;
   background-color: var(--black);
   border-radius: 35%;

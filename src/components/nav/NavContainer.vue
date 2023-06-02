@@ -28,7 +28,7 @@ const isOpened = computed<object>(() => {
   z-index: 5;
   width: 100%;
   height: 100vh;
-  background-color: #000;
+  background-color: var(--black);
   opacity: 0.3;
 
   @media (width >= 768px) {
@@ -37,20 +37,19 @@ const isOpened = computed<object>(() => {
 }
 
 .nav-container {
-  display: flex;
-  flex-direction: column;
-
   position: absolute;
   top: 0;
   z-index: 10;
   transform: translateX(-20rem);
 
+  display: flex;
+  flex-direction: column;
   width: min(20rem, 100%);
   height: 100vh;
 
-  overflow: auto;
   background-color: var(--black);
   transition: transform 0.15s ease-in-out;
+  overflow: auto;
 
   @media (width >= 768px) {
     position: relative;
