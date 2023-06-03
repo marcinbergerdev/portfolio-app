@@ -17,19 +17,19 @@
       </p>
     </header>
 
-    <section class="skills-container">
+    <section class="about-skills">
       <ul class="skills-list">
-        <li class="skill-data" v-for="(skill, id) in skills" :key="id">
-          <img class="skill-data__img" :src="skill.img" alt="html-icon" />
-          <h3 class="skill-data__title">{{ skill.name }}</h3>
+        <li class="skills-item" v-for="(skill, id) in skills" :key="id">
+          <img class="skills-item__img" :src="skill.img" alt="html-icon" />
+          <h3 class="skills-item__title">{{ skill.name }}</h3>
         </li>
       </ul>
     </section>
 
-    <section class="start-container">
-      <h4 class="start-container__title">start of learning</h4>
-      <span class="start-container__date">27.05.2020</span>
-    </section>
+    <!-- <section class="about-start">
+      <h4 class="about-start__title">start of learning</h4>
+      <span class="about-start__date">27.05.2020</span>
+    </section> -->
   </div>
 </template>
 
@@ -37,18 +37,16 @@
 import { ref } from "vue";
 
 const skills = ref([
-  { img: "/src/assets/icons/html.svg", name: "HTML" },
-  { img: "/src/assets/icons/css.svg", name: "CSS/SCSS" },
-  { img: "/src/assets/icons/javascript.svg", name: "JavaScript" },
-  { img: "/src/assets/icons/typescript.svg", name: "TypeScript" },
-  { img: "/src/assets/icons/vue.svg", name: "Vue" },
+  { img: "./src/assets/icons/html.svg", name: "HTML" },
+  { img: "./src/assets/icons/css.svg", name: "CSS/SCSS" },
+  { img: "./src/assets/icons/javascript.svg", name: "JavaScript" },
+  { img: "./src/assets/icons/typescript.svg", name: "TypeScript" },
+  { img: "./src/assets/icons/vue.svg", name: "Vue" },
 ]);
 </script>
 
 <style lang="scss" scoped>
 .about-container {
-  width: 100%;
-  height: 100%;
 }
 
 .about-header {
@@ -79,19 +77,28 @@ const skills = ref([
   }
 }
 
-.skills-container {
+.about-skills {
   margin-top: 7rem;
 }
 
-.skill-data {
+.skills-list {
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap row;
+  gap: 5rem;
+}
+
+.skills-item {
   &__img {
+    width: 10rem;
+    height: 10rem;
   }
 
   &__title {
   }
 }
 
-.start-container {
+.about-start {
   &__title {
   }
 

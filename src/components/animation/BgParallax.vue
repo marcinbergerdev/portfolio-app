@@ -1,5 +1,5 @@
 <template>
-  <div :id="`stars-parallax${1 + id}`" v-for="(__, id) in 3" :key="id"></div>
+  <span :id="`stars-parallax${1 + id}`" v-for="(__, id) in 3" :key="id"></span>
 </template>
 
 <script setup lang="ts"></script>
@@ -22,6 +22,7 @@ $shadows-big: multiple-box-shadow(100);
 #stars-parallax3 {
   position: relative;
   z-index: -10;
+  display: block;
   background: transparent;
   opacity: 0.8;
   border-radius: 50%;
