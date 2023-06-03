@@ -1,7 +1,13 @@
 <template>
   <div class="about-container">
     <header class="about-header">
-      <h2 class="about-header__title">about me</h2>
+      <h2 class="about-header__title">
+        <img
+          class="about-header__title-glasses"
+          src="../../assets/icons/glasses.png"
+          alt="glasses"
+        />about me
+      </h2>
       <p class="about-header__description">
         I have a very creative mind. My many interests and hobbies allow me to to look at
         each problem from a broader perspective, they allow me to think unconventionally,
@@ -47,18 +53,34 @@ const skills = ref([
 
 .about-header {
   padding: 0 2rem;
+
   &__title {
+    position: relative;
+    width: 15rem;
+    margin: 0 auto;
     font-size: 3rem;
+    &-glasses {
+      position: absolute;
+      top: 50%;
+      left: 6%;
+      z-index: -20;
+      transform: translate(-50%, -50%) rotate(-30deg);
+
+      width: 7rem;
+      height: 7rem;
+      opacity: 0.8;
+    }
   }
 
   &__description {
-    width: min(54rem, 100%);
+    width: min(95rem, 100%);
     margin: 2rem auto;
     font-size: 1.5rem;
   }
 }
 
 .skills-container {
+  margin-top: 7rem;
 }
 
 .skill-data {
