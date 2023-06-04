@@ -46,11 +46,11 @@ import { ref, onMounted } from "vue";
 const isLanguages = ref(false);
 
 const skills = ref([
-  { img: "/assets/icons/html.svg", name: "HTML" },
-  { img: "/assets/icons/css.svg", name: "CSS/SCSS" },
-  { img: "/assets/icons/javascript.svg", name: "JavaScript" },
-  { img: "/assets/icons/typescript.svg", name: "TypeScript" },
-  { img: "/assets/icons/vue.svg", name: "Vue" },
+  { img: "./src/assets/html.svg", name: "HTML" },
+  { img: "./src/assets/css.svg", name: "CSS/SCSS" },
+  { img: "./src/assets/javascript.svg", name: "JavaScript" },
+  { img: "./src/assets/typescript.svg", name: "TypeScript" },
+  { img: "./src/assets/vue.svg", name: "Vue" },
   // for netlify only /assets/.....
 ]);
 
@@ -100,7 +100,6 @@ onMounted(() => {
   gap: 5rem;
 }
 .skills-item {
-  position: relative;
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -115,10 +114,10 @@ onMounted(() => {
 
 @keyframes showLanguage {
   0% {
-    transform: translateY(-50px);
+    transform: translateY(-5rem);
     opacity: 0;
   }
-  50% {
+  60% {
     opacity: 0;
   }
   100% {
@@ -128,8 +127,6 @@ onMounted(() => {
 }
 
 .skills-languages {
-  position: absolute;
-
   &__img {
     width: 8rem;
     height: 8rem;
@@ -140,6 +137,7 @@ onMounted(() => {
   }
 
   &__title {
+    margin-top: 0.5rem;
   }
 }
 
