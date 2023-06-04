@@ -46,11 +46,11 @@ import { ref, onMounted } from "vue";
 const isLanguages = ref(false);
 
 const skills = ref([
-  { img: "./src/assets/icons/html.svg", name: "HTML" },
-  { img: "./src/assets/icons/css.svg", name: "CSS/SCSS" },
-  { img: "./src/assets/icons/javascript.svg", name: "JavaScript" },
-  { img: "./src/assets/icons/typescript.svg", name: "TypeScript" },
-  { img: "./src/assets/icons/vue.svg", name: "Vue" },
+  { img: "/assets/icons/html.svg", name: "HTML" },
+  { img: "/assets/icons/css.svg", name: "CSS/SCSS" },
+  { img: "/assets/icons/javascript.svg", name: "JavaScript" },
+  { img: "/assets/icons/typescript.svg", name: "TypeScript" },
+  { img: "/assets/icons/vue.svg", name: "Vue" },
   // for netlify only /assets/.....
 ]);
 
