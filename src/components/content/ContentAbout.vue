@@ -19,9 +19,16 @@
 
     <section class="about-skills">
       <ul class="skills-list">
-        <li class="skills-item" v-for="(skill, id) in skills" :key="id">
-          <img class="skills-item__img" :src="skill.img" alt="html-icon" />
-          <h3 class="skills-item__title">{{ skill.name }}</h3>
+        <li
+          class="skills-item"
+          v-for="(skill, id) in skills"
+          :key="id"
+          v-if="isLanguages"
+        >
+          <div class="skills-languages" :class="`languages${1 + id}`">
+            <img class="skills-languages__img" :src="skill.img" alt="html-icon" />
+            <h3 class="skills-languages__title">{{ skill.name }}</h3>
+          </div>
         </li>
       </ul>
     </section>
@@ -34,7 +41,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
+
+const isLanguages = ref(false);
 
 const skills = ref([
   { img: "./src/assets/icons/html.svg", name: "HTML" },
@@ -42,13 +51,15 @@ const skills = ref([
   { img: "./src/assets/icons/javascript.svg", name: "JavaScript" },
   { img: "./src/assets/icons/typescript.svg", name: "TypeScript" },
   { img: "./src/assets/icons/vue.svg", name: "Vue" },
+  // for netlify only /assets/.....
 ]);
+
+onMounted(() => {
+  isLanguages.value = true;
+});
 </script>
 
 <style lang="scss" scoped>
-.about-container {
-}
-
 .about-header {
   padding: 0 2rem;
 
@@ -78,23 +89,64 @@ const skills = ref([
 }
 
 .about-skills {
-  margin-top: 7rem;
+  margin-top: 10rem;
 }
 
 .skills-list {
   display: flex;
   justify-content: center;
+
   flex-flow: wrap row;
   gap: 5rem;
 }
-
 .skills-item {
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  width: 10rem;
+  height: 10rem;
+
+  @media (width >= 768px) {
+    width: 15rem;
+    height: 15rem;
+  }
+}
+
+@keyframes showLanguage {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
+.skills-languages {
+  position: absolute;
+
   &__img {
-    width: 10rem;
-    height: 10rem;
+    width: 8rem;
+    height: 8rem;
+    @media (width >= 768px) {
+      width: 10rem;
+      height: 10rem;
+    }
   }
 
   &__title {
+  }
+}
+
+$languages: 5;
+@for $i from 1 through $languages {
+  .languages#{$i} {
+    animation: showLanguage (0.3s * $i + 1) ease-in-out;
   }
 }
 

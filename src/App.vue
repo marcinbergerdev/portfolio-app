@@ -35,6 +35,7 @@ import HamburgerButton from "./components/hamburger/HamburgerButton.vue";
   overflow-y: scroll;
   @media (width >= 768px) {
     margin: 0;
+    padding-top: 16rem;
   }
 }
 </style>
