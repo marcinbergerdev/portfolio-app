@@ -79,14 +79,14 @@ const projects = ref([
 
 @keyframes showLanguage {
   0% {
-    transform: translateY(-5rem);
+    transform: scale(0);
     opacity: 0;
   }
-  25% {
+  60% {
     opacity: 0;
   }
   100% {
-    transform: translate(0);
+    transform: translate(1);
     opacity: 1;
   }
 }
@@ -99,7 +99,7 @@ const projects = ref([
 $projects: 4;
 @for $i from 1 through $projects {
   .project#{$i} {
-    animation: showLanguage (0.2s * $i + 1) ease-in-out;
+    animation: showLanguage (.2s * $i + 1) ease-in-out;
   }
 }
 

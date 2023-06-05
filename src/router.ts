@@ -18,8 +18,8 @@ const router = createRouter({
 
 router.beforeEach((__, to, next) => {
    const menu = useToggleMenu();
+   
    if (!!to.path && innerWidth <= 768) menu.closeMenuHandler();
-
    return next();
 });
 

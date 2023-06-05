@@ -27,7 +27,6 @@
           class="skills-item"
           v-for="(skill, id) in skills"
           :key="id"
-          v-if="isLanguages"
         >
           <div class="skills-languages" :class="`languages${1 + id}`">
             <img
@@ -50,9 +49,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref } from "vue";
 
-const isLanguages = ref(false);
 
 const skills = ref([
   { img: "/assets/icons/html.svg", name: "HTML" },
@@ -63,9 +61,7 @@ const skills = ref([
   // for netlify only /assets/.....
 ]);
 
-onMounted(() => {
-  isLanguages.value = true;
-});
+
 </script>
 
 <style lang="scss" scoped>
