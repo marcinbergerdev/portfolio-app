@@ -30,12 +30,9 @@ import HamburgerButton from "./components/hamburger/HamburgerButton.vue";
 
 .content-container {
   flex: 1;
-  padding-top: 10rem;
+  padding: 10rem 0 5rem 0;
   text-align: center;
   overflow-y: scroll;
-  @media (width >= 768px) {
-    margin: 0;
-    padding-top: 16rem;
-  }
+  color: var(--text-color);
 }
 </style>

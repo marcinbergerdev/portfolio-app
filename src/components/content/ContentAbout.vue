@@ -3,8 +3,9 @@
     <header class="about-header">
       <h2 class="about-header__title">
         <img
+          loading="lazy"
           class="about-header__title-glasses"
-          src="../../assets/icons/glasses.png"
+          src="/assets/icons/glasses.png"
           alt="glasses"
         />about me
       </h2>
@@ -18,6 +19,9 @@
     </header>
 
     <section class="about-skills">
+      <header class="skills-experience">
+        <h3 class="skills-experience__title">my skills</h3>
+      </header>
       <ul class="skills-list">
         <li
           class="skills-item"
@@ -26,17 +30,22 @@
           v-if="isLanguages"
         >
           <div class="skills-languages" :class="`languages${1 + id}`">
-            <img class="skills-languages__img" :src="skill.img" alt="html-icon" />
-            <h3 class="skills-languages__title">{{ skill.name }}</h3>
+            <img
+              loading="lazy"
+              class="skills-languages__img"
+              :src="skill.img"
+              alt="html-icon"
+            />
+            <h4 class="skills-languages__title">{{ skill.name }}</h4>
           </div>
         </li>
       </ul>
     </section>
 
-    <!-- <section class="about-start">
-      <h4 class="about-start__title">start of learning</h4>
+    <section class="about-start">
+      <h5 class="about-start__title">start of learning</h5>
       <span class="about-start__date">27.05.2020</span>
-    </section> -->
+    </section>
   </div>
 </template>
 
@@ -60,6 +69,25 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
+.about-container {
+  @media (width >= 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 100%;
+    gap: 10rem;
+  }
+}
+
+.about-skills,
+.about-start {
+  margin-top: 13rem;
+
+  @media (width >= 768px) {
+    margin: 0;
+  }
+}
+
 .about-header {
   padding: 0 2rem;
 
@@ -86,10 +114,6 @@ onMounted(() => {
     margin: 2rem auto;
     font-size: 1.5rem;
   }
-}
-
-.about-skills {
-  margin-top: 10rem;
 }
 
 .skills-list {
@@ -126,6 +150,12 @@ onMounted(() => {
   }
 }
 
+.skills-experience {
+  margin-bottom: 3rem;
+  &__title {
+    font-size: 3rem;
+  }
+}
 .skills-languages {
   &__img {
     width: 8rem;
@@ -144,15 +174,18 @@ onMounted(() => {
 $languages: 5;
 @for $i from 1 through $languages {
   .languages#{$i} {
-    animation: showLanguage (0.3s * $i + 1) ease-in-out;
+    animation: showLanguage (0.2s * $i + 1) ease-in-out;
   }
 }
 
 .about-start {
   &__title {
+    margin-bottom: 1rem;
+    font-size: 3rem;
   }
 
   &__date {
+    font-size: 2rem;
   }
 }
 </style>
