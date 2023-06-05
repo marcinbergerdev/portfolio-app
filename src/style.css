@@ -14,10 +14,11 @@
 
    --white: #ffffff;
    --black: #000000;
+   --bg-color: #0b1522;
 
+   
    --text-color: #E7E8E9;
 
-   --bg-color: #0b1522;
 }
 
 #app {
