@@ -20,7 +20,7 @@ $shadows-big: multiple-box-shadow(100);
 #stars-parallax1,
 #stars-parallax2,
 #stars-parallax3 {
-  position: relative;
+  position: absolute;
   z-index: -10;
   display: block;
   background: transparent;
