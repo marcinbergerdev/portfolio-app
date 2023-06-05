@@ -33,5 +33,6 @@ import HamburgerButton from "./components/hamburger/HamburgerButton.vue";
   padding: 10rem 0 5rem 0;
   text-align: center;
   overflow-y: scroll;
+  color: var(--text-color);
 }
 </style>
