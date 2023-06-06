@@ -4,28 +4,16 @@
       <h2 class="projects-header__title">my projects</h2>
     </header>
 
-    <article class="projects-container">
-      <ul class="projects-list">
-        <li
-          class="projects-box"
-          :class="`project${1 + id}`"
-          v-for="(project, id) in projects"
-          :key="id"
-        >
-          <header class="project-header">
-            <h3 class="project-header__title">{{ project.name }}</h3>
-          </header>
-          <a class="project-link" :href="project.link">
-            <img
-              loading="lazy"
-              class="project-link__img"
-              :src="project.img"
-              alt="project-background"
-            />
-          </a>
-        </li>
-      </ul>
-    </article>
+    <ul class="projects-list">
+      <li class="projects-item" v-for="(project, id) in projects" :key="id">
+        <a href="#" class="projects-link">
+          <div
+            class="projects-link__img"
+            :style="{ 'background-image': `url(${project.img})` }"
+          ></div>
+        </a>
+      </li>
+    </ul>
   </section>
 </template>
 
@@ -58,6 +46,14 @@ const projects = ref([
 
 <style scoped lang="scss">
 .projects-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10rem 0;
+
+  @media (width >= 768px) {
+    gap: 15rem;
+  }
 }
 .projects-header {
   &__title {
@@ -65,62 +61,60 @@ const projects = ref([
   }
 }
 
-.projects-container {
-}
 .projects-list {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 7rem;
   align-items: center;
-  flex-flow: wrap row;
-  gap: 10rem;
-  margin-top: 10rem;
-}
 
-@keyframes showLanguage {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-  60% {
-    opacity: 0;
-  }
-  100% {
-    transform: translate(1);
-    opacity: 1;
+  @media (width >= 768px) {
+    flex-flow: row wrap;
   }
 }
 
-.projects-box {
-  width: min(25rem, 100%);
-  height: 25rem;
-}
-
-$projects: 4;
-@for $i from 1 through $projects {
-  .project#{$i} {
-    animation: showLanguage (.2s * $i + 1) ease-in-out;
-  }
-}
-
-.project-header {
-  margin-bottom: 1rem;
-  &__title {
-    font-size: 1.5rem;
-    font-weight: 500;
-  }
-}
-
-.project-link {
-  display: block;
+.projects-item {
+  display: grid;
+  place-items: center;
   width: 100%;
-  height: 100%;
-  background-color: #000;
+
+  @media (width >= 768px) {
+    width: 40rem;
+  }
+}
+
+.projects-link {
+  display: block;
+  width: min(80%, 30rem);
+  height: 20rem;
 
   &__img {
     width: 100%;
     height: 100%;
-    opacity: 0.5;
+
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
   }
 }
+
+// @keyframes showLanguage {
+//   0% {
+//     transform: scale(0);
+//     opacity: 0;
+//   }
+//   60% {
+//     opacity: 0;
+//   }
+//   100% {
+//     transform: translate(1);
+//     opacity: 1;
+//   }
+// }
+
+// $projects: 4;
+// @for $i from 1 through $projects {
+//   .project#{$i} {
+//     animation: showLanguage (0.2s * $i + 1) ease-in-out;
+//   }
+// }
 </style>
