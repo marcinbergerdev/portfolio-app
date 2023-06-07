@@ -169,11 +169,11 @@ $languages: 5;
 .about-start {
   &__title {
     margin-bottom: 1rem;
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   &__date {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 </style>

@@ -11,20 +11,20 @@
         v-for="(project, id) in projects"
         :key="id"
       >
-        <div class="project-glass glass-1"></div>
-        <div class="project-glass glass-2"></div>
-        <div class="project-glass glass-3"></div>
+        <div class="glass-effect glass-1"></div>
+        <div class="glass-effect glass-2"></div>
+        <div class="glass-effect glass-3"></div>
 
         <a
           :href="project.link"
-          class="project-link"
+          class="link"
           :style="{ 'background-image': `url(${project.img})` }"
         >
         </a>
 
-        <div class="project-intro">
-          <h3 class="project-intro__title">{{ project.title }}</h3>
-          <p class="project-intro__description">{{ project.description }}</p>
+        <div class="intro">
+          <h3 class="intro__title">{{ project.title }}</h3>
+          <p class="intro__description">{{ project.description }}</p>
         </div>
       </li>
     </ul>
@@ -140,13 +140,13 @@ $projects: 4;
 
     &:hover {
       opacity: 1;
-      .project-link {
+      .link {
         opacity: 1;
         transform: scale(0.95);
         transition: all 0.15s ease-in-out;
       }
 
-      .project-glass {
+      .glass-effect {
         $degree: 30deg;
         transition: all 0.15s ease-in-out;
 
@@ -161,7 +161,7 @@ $projects: 4;
         }
       }
 
-      .project-intro {
+      .intro {
         opacity: 1;
         transform: rotateX(0) translate(-50%, -2rem);
         transition: all 0.15s ease-in-out;
@@ -170,7 +170,7 @@ $projects: 4;
   }
 }
 
-.project-link {
+.link {
   position: relative;
   display: block;
   width: 100%;
@@ -186,8 +186,10 @@ $projects: 4;
   }
 }
 
-.project-glass {
+.glass-effect {
+  display: none;
   @media (width >= 768px) {
+    display: block;
     position: absolute;
     top: 0;
     left: 0;
@@ -201,6 +203,7 @@ $projects: 4;
     background-color: rgba(#293442, 0.35);
     backdrop-filter: blur(0.3rem);
     transition: all 0.15s ease-in-out;
+    pointer-events: none;
     &.glass-1 {
       clip-path: polygon(0% 0%, 35% 0%, 50% 50%, 0% 75%);
     }
@@ -213,7 +216,7 @@ $projects: 4;
   }
 }
 
-.project-intro {
+.intro {
   position: absolute;
   top: -3.5rem;
 
@@ -248,6 +251,7 @@ $projects: 4;
     color: va(--text-color);
     opacity: 0;
     transition: all 0.15s ease-in-out;
+    pointer-events: none;
 
     &__title {
       font-size: 2.3rem;
