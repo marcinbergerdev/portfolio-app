@@ -23,11 +23,7 @@
         <h3 class="skills-experience__title">my skills</h3>
       </header>
       <ul class="skills-list">
-        <li
-          class="skills-item"
-          v-for="(skill, id) in skills"
-          :key="id"
-        >
+        <li class="skills-item" v-for="(skill, id) in skills" :key="id">
           <div class="skills-languages" :class="`languages${1 + id}`">
             <img
               loading="lazy"
@@ -51,17 +47,13 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-
 const skills = ref([
   { img: "/assets/icons/html.svg", name: "HTML" },
   { img: "/assets/icons/css.svg", name: "CSS/SCSS" },
   { img: "/assets/icons/javascript.svg", name: "JavaScript" },
   { img: "/assets/icons/typescript.svg", name: "TypeScript" },
   { img: "/assets/icons/vue.svg", name: "Vue" },
-  // for netlify only /assets/.....
 ]);
-
-
 </script>
 
 <style lang="scss" scoped>
@@ -170,7 +162,7 @@ const skills = ref([
 $languages: 5;
 @for $i from 1 through $languages {
   .languages#{$i} {
-    animation: showLanguage (0.2s * $i + 1) ease-in-out;
+    animation: showLanguage (0.2s * $i + 0.3) ease-in-out;
   }
 }
 

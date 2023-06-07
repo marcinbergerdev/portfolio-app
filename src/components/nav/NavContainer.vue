@@ -25,7 +25,7 @@ const isOpened = computed<object>(() => {
 .backdrop {
   position: absolute;
   top: 0;
-  z-index: 5;
+  z-index: 50;
   width: 100%;
   height: 100vh;
   background-color: var(--black);
@@ -39,7 +39,7 @@ const isOpened = computed<object>(() => {
 .nav-container {
   position: absolute;
   top: 0;
-  z-index: 10;
+  z-index: 100;
   transform: translateX(-20rem);
 
   display: flex;
