@@ -15,7 +15,7 @@ const router = createRouter({
       { name: "contact", path: "/contact", component: ContentContact },
    ],
    scrollBehavior() {
-      const routContainer = document.querySelector(".content-container");
+      const routContainer: Element | null = document.querySelector(".content-container");
       routContainer?.scrollTo({ top: 0 });
    },
 });
