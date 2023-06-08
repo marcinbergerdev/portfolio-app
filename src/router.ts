@@ -3,7 +3,7 @@ import { useToggleMenu } from "./store/ToggleMenu";
 
 const ContentAbout = () => import("./components/content/ContentAbout.vue");
 const ContentProjects = () =>
-   import("./components/content/ContentProjects.vue");
+   import("./components/content/projects/ContentProjects.vue");
 const ContentContact = () => import("./components/content/ContentContact.vue");
 
 const router = createRouter({

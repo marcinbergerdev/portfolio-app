@@ -1,95 +1,40 @@
 <template>
-  <section class="projects-wrapper">
-    <header class="projects-header">
-      <h2 class="projects-header__title">my projects</h2>
-    </header>
+  <li class="projects-item" :class="`project${1 + id}`">
+    <div class="glass-effect-container" v-if="isGlass">
+      <span class="glass-effect glass-1"></span>
+      <span class="glass-effect glass-2"></span>
+      <span class="glass-effect glass-3"></span>
+    </div>
 
-    <ul class="projects-list">
-      <li
-        class="projects-item"
-        :class="`project${1 + id}`"
-        v-for="(project, id) in projects"
-        :key="id"
-      >
-        <div class="glass-effect glass-1"></div>
-        <div class="glass-effect glass-2"></div>
-        <div class="glass-effect glass-3"></div>
+    <a :href="link" class="link" :style="{ 'background-image': `url(${image})` }"> </a>
 
-        <a
-          :href="project.link"
-          class="link"
-          :style="{ 'background-image': `url(${project.img})` }"
-        >
-        </a>
-
-        <div class="intro">
-          <h3 class="intro__title">{{ project.title }}</h3>
-          <p class="intro__description">{{ project.description }}</p>
-        </div>
-      </li>
-    </ul>
-  </section>
+    <div class="intro">
+      <h3 class="intro__title">{{ title }}</h3>
+      <p class="intro__description">{{ description }}</p>
+    </div>
+  </li>
 </template>
 
 <script setup lang="ts">
-import { Projects } from "../../types/Projects";
+import { useWindowSize } from "@vueuse/core";
+import { computed } from "vue";
 
-import { ref } from "vue";
+const { width } = useWindowSize();
 
-const projects = ref<Projects[]>([
-  {
-    title: "Shopex",
-    description: "Online Shop",
-    img: "/assets/projects/shopex.png",
-    link: "https://shoopdev.netlify.app/#/shop",
-  },
-  {
-    title: "Fito",
-    description: "Control your diet",
-    img: "/assets/projects/fito.png",
-    link: "https://fito-app.netlify.app/home",
-  },
-  {
-    title: "QuizyEasy",
-    description: "Test your knowledge",
-    img: "/assets/projects/quiz.png",
-    link: "https://quizy-easy.netlify.app/start-quiz",
-  },
-  {
-    title: "Galerion",
-    description: "Collect best pictures",
-    img: "/assets/projects/galerion.png",
-    link: "https://galerion.netlify.app/home/random",
-  },
-]);
+const isGlass = computed<boolean>(() => {
+  return width.value >= 768 ? true : false;
+});
+
+defineProps<{
+  id: number;
+  link: string;
+  image: string;
+  title: string;
+  description: string;
+}>();
 </script>
 
 <style scoped lang="scss">
-.projects-wrapper {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 15rem 0;
-}
-.projects-header {
-  &__title {
-    font-size: 3rem;
-  }
-}
-
-.projects-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 13rem;
-  padding-bottom: 7rem;
-
-  @media (width >= 768px) {
-    flex-flow: row wrap;
-  }
-}
-
 @keyframes showLanguageMobile {
   0% {
     transform: scale(0);
@@ -154,7 +99,7 @@ $projects: 4;
           transform: translate3d(-2.5rem, -1rem, 0rem) rotate3d(1, 10, 1, 30deg);
         }
         &.glass-2 {
-          transform: translate3d(2.5rem, -1rem, 0rem) rotate3d(0, 1, 0, -30deg);
+          transform: translate3d(2.5rem, -1rem, 0rem) rotate3d(0, 2, 0, -30deg);
         }
         &.glass-3 {
           transform: translate3d(0rem, 3rem, 0rem) rotate3d(1, 0.2, 0, 30deg);
@@ -166,6 +111,34 @@ $projects: 4;
         transform: rotateX(0) translate(-50%, -2rem);
         transition: all 0.15s ease-in-out;
       }
+    }
+  }
+}
+
+.glass-effect {
+  @media (width >= 768px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+
+    perspective: 1200px;
+    width: 100%;
+    height: 100%;
+
+    border-radius: 27px;
+    background-color: rgba(var(--glass-color), 0.35);
+    backdrop-filter: blur(0.3rem);
+    transition: all 0.15s ease-in-out;
+    pointer-events: none;
+    &.glass-1 {
+      clip-path: polygon(0% 0%, 35% 0%, 50% 50%, 0% 75%);
+    }
+    &.glass-2 {
+      clip-path: polygon(35% 0%, 100% 0%, 100% 75%, 50% 50%);
+    }
+    &.glass-3 {
+      clip-path: polygon(50% 50%, 100% 75%, 100% 100%, 0 100%, 0 75%);
     }
   }
 }
@@ -183,36 +156,6 @@ $projects: 4;
 
   @media (width >= 768px) {
     opacity: 1;
-  }
-}
-
-.glass-effect {
-  display: none;
-  @media (width >= 768px) {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 5;
-
-    width: 100%;
-    height: 100%;
-    perspective: 1200px;
-
-    border-radius: 27px;
-    background-color: rgba(#293442, 0.35);
-    backdrop-filter: blur(0.3rem);
-    transition: all 0.15s ease-in-out;
-    pointer-events: none;
-    &.glass-1 {
-      clip-path: polygon(0% 0%, 35% 0%, 50% 50%, 0% 75%);
-    }
-    &.glass-2 {
-      clip-path: polygon(35% 0%, 100% 0%, 100% 75%, 50% 50%);
-    }
-    &.glass-3 {
-      clip-path: polygon(50% 50%, 100% 75%, 100% 100%, 0 100%, 0 75%);
-    }
   }
 }
 
