@@ -34,13 +34,21 @@ import ContactSocial from "./ContactSocial.vue";
 
 .contact-content {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+
+  padding: 0 2rem;
   width: 100%;
   height: 100%;
   background: inherit;
-
+  
   @media (width >= 768px) {
-    width: 80%;
+    flex-direction: row-reverse;
+    justify-content: space-between;
     margin: 0 auto;
+    padding: 4rem;
+    width: 90%;
     background-color: rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(4rem);
     border: 1px solid var(--black);
