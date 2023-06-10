@@ -4,17 +4,17 @@
     <div class="inputs-container">
 
       <div class="input-box">
-        <input class="input-box__input" type="text" placeholder="name" v-model="userName"/>
+        <input class="input-box__input" type="text" placeholder="name" v-model="userName" />
         <p class="input-box__error-message" v-if="isError">this is required</p>
       </div>
 
       <div class="input-box">
-        <input class="input-box__input" type="text" placeholder="title" />
+        <input class="input-box__input" type="text" placeholder="title" v-model="title"/>
         <p class="input-box__error-message" v-if="isError">this is required</p>
       </div>
 
       <div class="input-box">
-        <input class="input-box__input" type="email" placeholder="email" />
+        <input class="input-box__input" type="email" placeholder="email" v-model="email" />
         <p class="input-box__error-message" v-if="isError">this is required</p>
       </div>
 
@@ -39,10 +39,13 @@ import { ref } from "vue";
 
 const isError = ref<boolean>(false);
 
-// const userName = defineModel();
+const userName = ref<string>('');
+const title = ref<string>('');
+const email = ref<string>('');
 
 
 const sendHandler = () => {
+
   
 }
 
