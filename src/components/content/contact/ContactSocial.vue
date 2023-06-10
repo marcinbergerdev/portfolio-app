@@ -31,9 +31,11 @@ const socials = ref<Socials[]>([
   flex: 1;
   display: flex;
   align-items: flex-start;
+  margin-top: 5rem;
 
   justify-content: center;
   @media (width >= 768px) {
+    margin: 0;
     justify-content: flex-end;
   }
 }

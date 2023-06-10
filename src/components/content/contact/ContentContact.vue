@@ -6,6 +6,7 @@
 
     <section class="contact-content">
       <ContactSocial />
+      <ContactFurtherDetails />
       <ContactForm />
     </section>
   </div>
@@ -14,12 +15,14 @@
 <script setup lang="ts">
 import ContactForm from "./ContactForm.vue";
 import ContactSocial from "./ContactSocial.vue";
+import ContactFurtherDetails from "./ContactFurtherDetails.vue";
 </script>
 
 <style scoped lang="scss">
 .contact-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 5rem 0;
   width: 100%;
   background-attachment: fixed;
@@ -36,17 +39,16 @@ import ContactSocial from "./ContactSocial.vue";
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  gap: 2rem;
 
   padding: 0 2rem;
   width: 100%;
   height: 100%;
   background: inherit;
-  
+
   @media (width >= 768px) {
     flex-direction: row-reverse;
     justify-content: space-between;
-    margin: 0 auto;
     padding: 4rem;
     width: 90%;
     background-color: rgba(0, 0, 0, 0.1);
