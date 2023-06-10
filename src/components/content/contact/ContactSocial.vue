@@ -46,7 +46,7 @@ const socials = ref<Socials[]>([
   align-items: center;
   gap: 0 1rem;
 
-  padding: 0.3rem 0;
+  padding: 0.7rem 0;
   width: min(17rem, 100%);
   border: 2px solid var(--black);
   border-radius: 15rem;

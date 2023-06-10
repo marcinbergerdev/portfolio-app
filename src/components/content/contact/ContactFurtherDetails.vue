@@ -20,6 +20,10 @@
   gap: 0.5rem 0;
   font-size: 1.4rem;
   margin: 5rem 0;
+
+  @media (width >= 768px) {
+    display: none;
+  }
 }
 
 </style>
