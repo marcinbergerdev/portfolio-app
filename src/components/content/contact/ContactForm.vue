@@ -4,7 +4,7 @@
     <div class="inputs-container">
 
       <div class="input-box">
-        <input class="input-box__input" type="text" placeholder="name" />
+        <input class="input-box__input" type="text" placeholder="name" v-model="userName"/>
         <p class="input-box__error-message" v-if="isError">this is required</p>
       </div>
 
@@ -38,6 +38,8 @@
 import { ref } from "vue";
 
 const isError = ref<boolean>(false);
+
+// const userName = defineModel();
 
 
 const sendHandler = () => {
