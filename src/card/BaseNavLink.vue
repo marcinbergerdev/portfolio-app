@@ -13,14 +13,14 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-const props = defineProps<{
+const { mode, path, name } = defineProps<{
   mode: string;
   path: string;
   name: string;
 }>();
 
 const redirectToGithub = computed(() => {
-  return props.name === "github";
+  return name === "github";
 });
 </script>
 
