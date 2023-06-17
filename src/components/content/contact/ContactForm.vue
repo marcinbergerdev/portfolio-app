@@ -1,54 +1,121 @@
 <template>
-  <form class="form-container" @submit.prevent="sendHandler">
-
+  <form class="form-container" ref="formData" @submit.prevent="checkFormHandler">
     <div class="inputs-container">
-
-      <div class="input-box">
-        <input class="input-box__input" type="text" placeholder="name" v-model="userName" />
-        <p class="input-box__error-message" v-if="isError">this is required</p>
-      </div>
-
-      <div class="input-box">
-        <input class="input-box__input" type="text" placeholder="title" v-model="title"/>
-        <p class="input-box__error-message" v-if="isError">this is required</p>
-      </div>
-
-      <div class="input-box">
-        <input class="input-box__input" type="email" placeholder="email" v-model="email" />
-        <p class="input-box__error-message" v-if="isError">this is required</p>
+      <div class="input-box" v-for="(input, id) in formInputs" :key="id">
+        <input
+          class="input-box__input"
+          :type="input.type"
+          :name="input.name"
+          :placeholder="input.placeholder"
+          v-model="userFormData[input.name]"
+        />
+        <p
+          class="input-box__error-message"
+          v-if="isInputEmpty && !userFormData[input.name].trim()"
+        >
+          this is required
+        </p>
       </div>
 
       <div class="input-box">
         <textarea
           class="input-box__input message-area"
           cols="30"
-          rows="16"
+          rows="11"
+          name="message"
           placeholder="your message..."
+          v-model="userFormData.message"
         ></textarea>
-        <p class="input-box__error-message" v-if="isError">error</p>
+        <p
+          class="input-box__error-message"
+          v-if="isInputEmpty && !userFormData.message.trim()"
+        >
+          this is required
+        </p>
       </div>
-
     </div>
 
     <button class="send-button">send</button>
   </form>
+
+  <ContentFormResponseModal
+    v-if="isModal"
+    :is-error-message="isErrorMessage"
+    :loading-spinner="isLoadingSpinner"
+    :title="responseMessage"
+    @close="closeModal"
+  />
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import ContentFormResponseModal from "./ContentFormResponseModal.vue";
+import EmailJs from "@emailjs/browser";
+import { UserDataForm } from "../../../types/FormData";
+import { FormInputs } from "../../../types/Inputs";
+import { ref, reactive } from "vue";
 
-const isError = ref<boolean>(false);
+const isInputEmpty = ref<boolean>(false);
+const isLoadingSpinner = ref<boolean>(false);
+const isModal = ref<boolean>(false);
+const isErrorMessage = ref<string>("");
 
-const userName = ref<string>('');
-const title = ref<string>('');
-const email = ref<string>('');
+const formData = ref<string>("");
+const responseMessage = ref<string>("");
 
+const userFormData = reactive<UserDataForm>({
+  name: "",
+  title: "",
+  email: "",
+  message: "",
+});
 
-const sendHandler = () => {
+const formInputs = ref<FormInputs[]>([
+  { type: "text", name: "name", placeholder: "name" },
+  { type: "text", name: "title", placeholder: "title" },
+  { type: "email", name: "email", placeholder: "email" },
+]);
 
-  
-}
+const checkFormHandler = () => {
+  const inputsEmptyStatus = Object.values(userFormData).every(
+    (input: string) => input !== "" && input.trim()
+  );
+  isInputEmpty.value = true;
+  if (!inputsEmptyStatus) return;
+  sendEmail();
+};
 
+const sendEmail = async () => {
+  isModal.value = true;
+  isLoadingSpinner.value = true;
+
+  await EmailJs.sendForm(
+    import.meta.env.VITE_SERVICE_ID,
+    import.meta.env.VITE_TEMPLATE_ID,
+    formData.value,
+    import.meta.env.VITE_PUBLIC_KEY
+  ).then(
+    () => {
+      responseMessage.value = "Success, sending a message was successful!";
+    },
+    (error) => {
+      console.log(error);
+      isErrorMessage.value = "error";
+      responseMessage.value = "Sorry, something went wrong message not sent :(";
+    }
+  );
+
+  isLoadingSpinner.value = false;
+};
+
+const closeModal = () => {
+  isModal.value = false;
+  responseMessage.value = "";
+  isErrorMessage.value = "";
+  userFormData.name = "";
+  userFormData.title = "";
+  userFormData.email = "";
+  userFormData.message = "";
+};
 </script>
 
 <style scoped lang="scss">
@@ -83,8 +150,8 @@ const sendHandler = () => {
 
   &__error-message {
     align-self: flex-start;
-    margin: 0.9rem;
-    font-size: 1.3rem;
+    margin: 0.4rem 0 0 0.7rem;
+    font-size: 1.2rem;
     color: var(--form-error);
     font-weight: 500;
   }
@@ -114,5 +181,9 @@ const sendHandler = () => {
     box-shadow: 0 0 15px 3px rgba(#d4aa00, 0.26);
     transition: all 0.15s ease-in-out;
   }
+}
+
+.error-border {
+  outline: 1px solid var(--form-error);
 }
 </style>

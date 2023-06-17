@@ -5,16 +5,11 @@
     </header>
 
     <ContentList />
-    
   </section>
 </template>
 
 <script setup lang="ts">
 import ContentList from "./ContentList.vue";
-
-
-
-
 </script>
 
 <style scoped lang="scss">

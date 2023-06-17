@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import { useToggleMenu } from "./store/ToggleMenu";
 
-const ContentAbout = () => import("./components/content/ContentAbout.vue");
+const ContentAbout = () => import("./components/content/about/ContentAbout.vue");
 const ContentProjects = () =>
    import("./components/content/projects/ContentProjects.vue");
 const ContentContact = () => import("./components/content/contact/ContentContact.vue");

@@ -47,7 +47,12 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-const skills = ref([
+interface MySkills {
+  img: string,
+  name: string
+}
+
+const skills = ref<MySkills[]>([
   { img: "/assets/icons/html.svg", name: "HTML" },
   { img: "/assets/icons/css.svg", name: "CSS/SCSS" },
   { img: "/assets/icons/javascript.svg", name: "JavaScript" },
