@@ -97,8 +97,7 @@ const sendEmail = async () => {
     () => {
       responseMessage.value = "Success, sending a message was successful!";
     },
-    (error) => {
-      console.log(error);
+    () => {
       isErrorMessage.value = "error";
       responseMessage.value = "Sorry, something went wrong message not sent :(";
     }
