@@ -34,7 +34,6 @@ import ContactFurtherDetails from "./ContactFurtherDetails.vue";
     font-weight: 500;
   }
 }
-
 .contact-content {
   position: relative;
   display: flex;
