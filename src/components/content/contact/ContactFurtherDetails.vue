@@ -2,7 +2,7 @@
   <div class="contact-info">
     <span>or</span>
     <span>write to me directly</span>
-    <img src="/assets/icons/email.svg" alt="email" />
+    <img class="contact-info__icon" src="/assets/icons/email.svg" alt="email" />
   </div>
 </template>
 
@@ -15,6 +15,10 @@
   gap: 0.5rem 0;
   font-size: 1.6rem;
   margin: 5rem 0;
+
+  &__icon {
+    width: 2.5rem;
+  }
 
   @media (width >= 768px) {
     display: none;
