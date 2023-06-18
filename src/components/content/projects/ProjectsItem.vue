@@ -1,5 +1,10 @@
 <template>
-  <li class="projects-item" :class="`project${1 + id}`">
+  <li
+    class="projects-item"
+    :class="projectIteration"
+    @mouseover="showTooltip"
+    @mouseleave="closeTooltip"
+  >
     <div class="glass-effect-container" v-if="isGlass">
       <span class="glass-effect glass-1"></span>
       <span class="glass-effect glass-2"></span>
@@ -12,26 +17,38 @@
       <h3 class="intro__title">{{ title }}</h3>
       <p class="intro__description">{{ description }}</p>
     </div>
+
+    <ContentTooltip :languages="languages" :isTooltip="isTooltip" />
   </li>
 </template>
 
 <script setup lang="ts">
+import ContentTooltip from "./ProjectsTooltip.vue";
 import { useWindowSize } from "@vueuse/core";
-import { computed } from "vue";
+import { ref, computed } from "vue";
 
-const { width } = useWindowSize();
-
-const isGlass = computed<boolean>(() => {
-  return width.value >= 768 ? true : false;
-});
-
-defineProps<{
+const { id } = defineProps<{
   id: number;
   link: string;
   image: string;
   title: string;
   description: string;
+  languages?: string[];
 }>();
+
+const { width } = useWindowSize();
+const isTooltip = ref(false);
+
+const projectIteration = computed<string>(() => {
+  return `project${1 + id}`;
+});
+const isGlass = computed<boolean>(() => {
+  return width.value >= 768 ? true : false;
+});
+
+
+const showTooltip = () => (isTooltip.value = true);
+const closeTooltip = () => (isTooltip.value = false);
 </script>
 
 <style scoped lang="scss">

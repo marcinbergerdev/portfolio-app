@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import ContentList from "./ContentList.vue";
+import ContentList from "./ProjectsList.vue";
 </script>
 
 <style scoped lang="scss">
@@ -18,6 +18,10 @@ import ContentList from "./ContentList.vue";
   display: flex;
   flex-direction: column;
   gap: 15rem 0;
+
+  @media (width >= 768px) {
+    gap: 10rem 0;
+  }
 }
 .projects-header {
   &__title {

@@ -8,13 +8,14 @@
       :image="project.img"
       :title="project.title"
       :description="project.description"
+      :languages="project.languages"
     ></ContentItem>
   </ul>
 </template>
 
 <script setup lang="ts">
 import { Projects } from "../../../types/Projects";
-import ContentItem from "./ContentItem.vue";
+import ContentItem from "./ProjectsItem.vue";
 import { ref } from "vue";
 
 const projects = ref<Projects[]>([
@@ -23,24 +24,46 @@ const projects = ref<Projects[]>([
     description: "Online Shop",
     img: "/assets/projects/shopex.png",
     link: "https://shoopdev.netlify.app/#/shop",
+    languages: [
+      "HTML",
+      "CSS/SCSS",
+      "TypeScript",
+      "Vue 3(Composition API, Routing, Transition, Pinia)",
+      "FireBase",
+    ],
   },
   {
     title: "Fito",
     description: "Control your diet",
     img: "/assets/projects/fito.png",
     link: "https://fito-app.netlify.app/home",
+    languages: [
+      "HTML",
+      "CSS/SCSS",
+      "TypeScript",
+      "Vue(Option API, Routing,Transition,Vuex)",
+      "FireBase",
+    ],
   },
   {
     title: "QuizyEasy",
     description: "Test your knowledge",
     img: "/assets/projects/quiz.png",
     link: "https://quizy-easy.netlify.app/start-quiz",
+    languages: [
+      "HTML",
+      "CSS/SCSS",
+      "TypeScript",
+      "Vue(Option API, Routing,Transition)",
+      "Locale Storage",
+    ],
   },
   {
     title: "Galerion",
     description: "Collect best pictures",
     img: "/assets/projects/galerion.png",
     link: "https://galerion.netlify.app/home/random",
+    languages: ["HTML", "CSS/SCSS", "Vue(Option API,Routing)", "Axios", "Locale Storage"],
   },
 ]);
 </script>
@@ -51,8 +74,8 @@ const projects = ref<Projects[]>([
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 13rem;
-  padding-bottom: 7rem;
+  gap: 15rem;
+  padding: 0 5rem 7rem 5rem;
 
   @media (width >= 768px) {
     flex-flow: row wrap;
