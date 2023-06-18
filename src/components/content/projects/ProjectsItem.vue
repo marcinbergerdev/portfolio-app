@@ -18,7 +18,7 @@
       <p class="intro__description">{{ description }}</p>
     </div>
 
-    <ContentTooltip :languages="languages" :isTooltip="isTooltip" />
+    <ContentTooltip v-if="isTooltip" :languages="languages" :isTooltip="isTooltip" />
   </li>
 </template>
 
@@ -33,7 +33,7 @@ const { id } = defineProps<{
   image: string;
   title: string;
   description: string;
-  languages?: string[];
+  languages: string[];
 }>();
 
 const { width } = useWindowSize();
@@ -45,7 +45,6 @@ const projectIteration = computed<string>(() => {
 const isGlass = computed<boolean>(() => {
   return width.value >= 768 ? true : false;
 });
-
 
 const showTooltip = () => (isTooltip.value = true);
 const closeTooltip = () => (isTooltip.value = false);

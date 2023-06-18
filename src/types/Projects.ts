@@ -3,5 +3,5 @@ export interface Projects {
    description: string;
    img: string;
    link: string;
-   languages?: string[];
+   languages: string[];
 }

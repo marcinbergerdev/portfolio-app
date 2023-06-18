@@ -1,5 +1,5 @@
 <template>
-  <div class="tooltip-list" v-if="isTooltip">
+  <div class="tooltip-list">
     <span v-for="(lang, id) in languages" :key="id" v-if="isTooltip">
       {{ lang }}
     </span>
@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 defineProps<{
-  languages?: string[];
+  languages: string[];
   isTooltip: boolean;
 }>();
 </script>

@@ -16,11 +16,9 @@
    --black: #000000;
    --gold: #d4aa00;
 
-   --bg-color: #0b1522;
-
+   --bg-color: #0b1522;   
    --form-error: #9e2727;
    --form-success: #13da13;
-
    --glass-color: 41, 52, 66;
    --text-color: #e7e8e9;
 }
@@ -42,6 +40,10 @@ a {
 
 ul > li {
    list-style: none;
+}
+
+input:-webkit-autofill {
+   transition: background-color 100000s 0s, color 100000s 0s;
 }
 
 /* Animation for menu navigation links */

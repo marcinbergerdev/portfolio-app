@@ -75,10 +75,11 @@ const projects = ref<Projects[]>([
   justify-content: center;
   align-items: center;
   gap: 15rem;
-  padding: 0 5rem 7rem 5rem;
+  padding-bottom: 7rem;
 
   @media (width >= 768px) {
     flex-flow: row wrap;
+    padding: 0 5rem 7rem 5rem;
   }
 }
 </style>
