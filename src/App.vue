@@ -34,5 +34,21 @@ import HamburgerButton from "./components/hamburger/HamburgerButton.vue";
   text-align: center;
   overflow: auto;
   color: var(--text-color);
+
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: var(--bg-color);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #8e760c;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--gold);
+  }
 }
 </style>

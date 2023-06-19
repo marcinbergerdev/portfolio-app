@@ -56,7 +56,7 @@ const closeTooltip = () => (isTooltip.value = false);
     transform: scale(0);
     opacity: 0;
   }
-  55% {
+  65% {
     opacity: 0;
   }
   100% {
