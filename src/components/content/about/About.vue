@@ -10,11 +10,11 @@
         />about me
       </h2>
       <p class="about-header__description">
-        I have a very creative mind. My many interests and hobbies allow me to to look at
-        each problem from a broader perspective, they allow me to think unconventionally,
-        and thus generate an advantage over the competition. "Brightly the outlined goal
-        is my priority. I believe it was delivered on time, high quality work is the key
-        to real company results.
+        Driven by a deep curiosity for the world and technology, I am a dedicated
+        individual with a relentless pursuit of knowledge. My patient and meticulous
+        approach enables me to dive deep into challenges, seeking answers until they are
+        found. With a specialized focus on Vue.js, I bring creativity and innovation to
+        every project. "only those who seek shall find"
       </p>
     </header>
 
@@ -48,8 +48,8 @@
 import { ref } from "vue";
 
 interface MySkills {
-  img: string,
-  name: string
+  img: string;
+  name: string;
 }
 
 const skills = ref<MySkills[]>([
@@ -62,6 +62,20 @@ const skills = ref<MySkills[]>([
 </script>
 
 <style lang="scss" scoped>
+@keyframes showLanguage {
+  0% {
+    transform: translateY(-5rem);
+    opacity: 0;
+  }
+  45% {
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
 .about-container {
   @media (width >= 768px) {
     display: flex;
@@ -129,26 +143,13 @@ const skills = ref<MySkills[]>([
   }
 }
 
-@keyframes showLanguage {
-  0% {
-    transform: translateY(-5rem);
-    opacity: 0;
-  }
-  45% {
-    opacity: 0;
-  }
-  100% {
-    transform: translate(0);
-    opacity: 1;
-  }
-}
-
 .skills-experience {
   margin-bottom: 3rem;
   &__title {
     font-size: 3rem;
   }
 }
+
 .skills-languages {
   &__img {
     width: 8rem;

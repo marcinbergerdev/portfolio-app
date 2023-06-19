@@ -36,5 +36,4 @@ const options = ref<Options[]>([
   gap: 4rem;
   padding: 4rem 1.5rem;
 }
-
 </style>

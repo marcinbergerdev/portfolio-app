@@ -16,7 +16,10 @@
    --black: #000000;
    --gold: #d4aa00;
 
-   --bg-color: #0b1522;   
+   --border-color: #757575;
+   --input-bg: #080e13;
+   --bg-color: #0b1522;
+
    --form-error: #9e2727;
    --form-success: #13da13;
    --glass-color: 41, 52, 66;

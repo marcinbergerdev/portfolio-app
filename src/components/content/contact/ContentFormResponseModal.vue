@@ -35,7 +35,6 @@ const isError = computed<string>(() => {
   position: absolute;
   top: 0;
   z-index: 100;
-
   display: grid;
   place-items: center;
 
@@ -47,14 +46,13 @@ const isError = computed<string>(() => {
 
 .dialog-box {
   position: relative;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem 0;
+
   padding: 3rem 4rem;
   width: min(50rem, 100%);
-
   border-radius: 2rem;
   background-color: rgba(var(--glass-color), 0.45);
   backdrop-filter: blur(0.45rem);

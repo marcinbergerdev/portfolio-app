@@ -6,58 +6,7 @@
   </header>
 </template>
 
-<script setup lang="ts"></script>
-
 <style scoped lang="scss">
-.header-logo {
-  grid-area: logo;
-  position: relative;
-  z-index: 1;
-  padding: 3rem 0;
-  text-align: center;
-  overflow: hidden;
-}
-
-.glitch {
-  position: relative;
-  display: block;
-  font-size: 2rem;
-  text-shadow: 0px -0px 3px rgba(255, 255, 255, 1);
-  animation: noise-anim 3s 6s infinite linear alternate-reverse,
-    shift 4s 6s ease-in-out infinite alternate, blur 8s 6s ease-in-out infinite alternate;
-  transform: skewX(0deg);
-
-  @media (width >= 768px) {
-    font-size: 2.2rem;
-  }
-}
-.glitch::after,
-.glitch::before {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  color: transparent;
-  background: transparent;
-  clip: rect(0, 900px, 0, 0);
-  animation: noise-anim 3s 6s infinite linear alternate-reverse,
-    shift 4s 6s ease-in-out infinite alternate;
-  transform: skewX(0deg);
-  overflow: hidden;
-  opacity: 0.8;
-}
-
-.glitch::after {
-  left: 3px;
-  text-shadow: -1px 0 red;
-  z-index: -2;
-}
-
-.glitch::before {
-  left: 1px;
-  text-shadow: -3px 0 cyan;
-  z-index: -1;
-}
-
 @keyframes noise-anim {
   $steps: 20;
   @for $i from 0 through $steps {
@@ -111,5 +60,54 @@
   100% {
     transform: skewX(0deg);
   }
+}
+
+.header-logo {
+  grid-area: logo;
+  position: relative;
+  z-index: 1;
+  padding: 3rem 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.glitch {
+  position: relative;
+  display: block;
+  font-size: 2rem;
+  text-shadow: 0px -0px 3px rgba(255, 255, 255, 1);
+  animation: noise-anim 3s 6s infinite linear alternate-reverse,
+    shift 4s 6s ease-in-out infinite alternate, blur 8s 6s ease-in-out infinite alternate;
+  transform: skewX(0deg);
+
+  @media (width >= 768px) {
+    font-size: 2.2rem;
+  }
+}
+.glitch::after,
+.glitch::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  color: transparent;
+  background: transparent;
+  clip: rect(0, 900px, 0, 0);
+  animation: noise-anim 3s 6s infinite linear alternate-reverse,
+    shift 4s 6s ease-in-out infinite alternate;
+  transform: skewX(0deg);
+  overflow: hidden;
+  opacity: 0.8;
+}
+
+.glitch::after {
+  left: 3px;
+  text-shadow: -1px 0 red;
+  z-index: -2;
+}
+
+.glitch::before {
+  left: 1px;
+  text-shadow: -3px 0 cyan;
+  z-index: -1;
 }
 </style>

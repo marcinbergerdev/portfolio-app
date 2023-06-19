@@ -15,7 +15,6 @@ import { useToggleMenu } from "../../store/ToggleMenu";
 import { computed } from "vue";
 
 const menu = useToggleMenu();
-
 const isOpened = computed<object>(() => {
   return { opened: menu.isOpen };
 });
@@ -26,6 +25,7 @@ const isOpened = computed<object>(() => {
   position: absolute;
   top: 0;
   z-index: 50;
+
   width: 100%;
   height: 100vh;
   background-color: var(--black);

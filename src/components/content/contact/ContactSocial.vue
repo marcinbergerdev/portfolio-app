@@ -7,7 +7,6 @@
       :key="id"
     >
       <img class="social-link__icon" :src="icon" :alt="name" />
-
       <span class="social-link__name">{{ name }}</span>
     </a>
   </div>
@@ -32,8 +31,8 @@ const socials = ref<Socials[]>([
   display: flex;
   align-items: flex-start;
   margin-top: 5rem;
-
   justify-content: center;
+
   @media (width >= 768px) {
     margin: 0;
     justify-content: flex-end;
@@ -48,7 +47,7 @@ const socials = ref<Socials[]>([
 
   padding: 0.7rem 0;
   width: min(17rem, 100%);
-  border: 2px solid var(--black);
+  border: 2px solid var(--border-color);
   border-radius: 15rem;
   backdrop-filter: blur(2rem);
 
@@ -56,6 +55,7 @@ const socials = ref<Socials[]>([
     backdrop-filter: none;
     opacity: 0.8;
     transition: all 0.15s ease-in-out;
+    border: 2px solid var(--black);
 
     &:hover {
       opacity: 1;

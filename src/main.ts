@@ -8,9 +8,8 @@ import BaseLink from "./card/BaseNavLink.vue";
 const pinia = createPinia();
 const app = createApp(App);
 
-
 app.use(pinia)
 app.use(Router);
-
 app.component("BaseNavLink", BaseLink);
+
 app.mount("#app");

@@ -137,13 +137,17 @@ const closeModal = () => {
     padding: 1.5rem 2rem;
     font-size: 1.4rem;
     color: var(--white);
-    background-color: #080e13;
+    background-color: var(--input-bg);
     border-radius: 15px;
-    border: 1px solid var(--black);
+    border: 1px solid var(--border-color);
     outline: none;
 
     &:focus {
-      outline: 1px solid #b89302;
+      outline: 1px solid var(--gold);
+    }
+
+    @media (width >= 768px) {
+      border: 1px solid var(--black);
     }
   }
 
@@ -167,7 +171,7 @@ const closeModal = () => {
   font-size: 1.8rem;
   color: var(--white);
   background-color: transparent;
-  border: 2px solid var(--black);
+  border: 1px solid var(--border-color);;
   border-radius: 15rem;
   backdrop-filter: blur(2rem);
 
@@ -179,6 +183,10 @@ const closeModal = () => {
     opacity: 1;
     box-shadow: 0 0 15px 3px rgba(#d4aa00, 0.26);
     transition: all 0.15s ease-in-out;
+  }
+
+  @media (width >= 768px) {
+    border: 2px solid var(--black);
   }
 }
 

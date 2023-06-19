@@ -13,7 +13,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-const { mode, path, name } = defineProps<{
+const { name } = defineProps<{
   mode: string;
   path: string;
   name: string;
@@ -25,8 +25,6 @@ const redirectToGithub = computed(() => {
 </script>
 
 <style scoped lang="scss">
-
-
 .link-name {
   display: block;
 }
