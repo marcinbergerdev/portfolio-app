@@ -4,12 +4,13 @@
       <h2 class="projects-header__title">my projects</h2>
     </header>
 
-    <ContentList />
+    <ProjectsList />
   </section>
 </template>
 
 <script setup lang="ts">
-import ContentList from "./ProjectsList.vue";
+import { defineAsyncComponent } from "vue";
+const ProjectsList = defineAsyncComponent(() => import("./ProjectsList.vue"));
 </script>
 
 <style scoped lang="scss">

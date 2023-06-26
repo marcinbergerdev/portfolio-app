@@ -48,7 +48,11 @@
 </template>
 
 <script setup lang="ts">
-import ContentFormResponseModal from "./ContentFormResponseModal.vue";
+import { defineAsyncComponent } from "vue";
+const ContentFormResponseModal = defineAsyncComponent(
+  () => import("./ContentFormResponseModal.vue")
+);
+
 import EmailJs from "@emailjs/browser";
 import { UserDataForm } from "../../../types/FormData";
 import { FormInputs } from "../../../types/Inputs";
@@ -171,7 +175,7 @@ const closeModal = () => {
   font-size: 1.8rem;
   color: var(--white);
   background-color: transparent;
-  border: 1px solid var(--border-color);;
+  border: 1px solid var(--border-color);
   border-radius: 15rem;
   backdrop-filter: blur(2rem);
 

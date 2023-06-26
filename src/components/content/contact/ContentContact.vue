@@ -13,9 +13,12 @@
 </template>
 
 <script setup lang="ts">
-import ContactForm from "./ContactForm.vue";
-import ContactSocial from "./ContactSocial.vue";
-import ContactFurtherDetails from "./ContactFurtherDetails.vue";
+import { defineAsyncComponent } from "vue";
+const ContactForm = defineAsyncComponent(() => import("./ContactForm.vue"));
+const ContactSocial = defineAsyncComponent(() => import("./ContactSocial.vue"));
+const ContactFurtherDetails = defineAsyncComponent(
+  () => import("./ContactFurtherDetails.vue")
+);
 </script>
 
 <style scoped lang="scss">
