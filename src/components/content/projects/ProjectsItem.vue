@@ -78,7 +78,8 @@ const closeTooltip = () => (isTooltip.value = false);
   }
 }
 
-$projects: 4;
+// Numbers of project needed to animations
+$projects: 6;
 @for $i from 1 through $projects {
   .project#{$i} {
     animation: showLanguageMobile (0.35s * $i + 0.3) ease-out;

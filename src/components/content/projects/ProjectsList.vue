@@ -20,6 +20,20 @@ import { ref } from "vue";
 
 const projects = ref<Projects[]>([
   {
+    title: "Unity Testing",
+    description: "Examples of units test",
+    img: "/assets/projects/unitytest.png",
+    link: "https://unitytests.netlify.app",
+    languages: ["HTML", "CSS/SCSS", "TypeScript", "Unity Testing"],
+  },
+  {
+    title: "Nuxt&Testing",
+    description: "Collect unity tests",
+    img: "/assets/projects/nuxtproject.png",
+    link: "https://nuxtesting.netlify.app",
+    languages: ["HTML", "CSS/SCSS", "TypeScript", "Nuxt"],
+  },
+  {
     title: "Shopex",
     description: "Online Shop",
     img: "/assets/projects/shopex.png",
