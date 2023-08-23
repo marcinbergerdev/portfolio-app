@@ -22,16 +22,36 @@
       <header class="skills-experience">
         <h3 class="skills-experience__title">my skills</h3>
       </header>
+
       <ul class="skills-list">
-        <li class="skills-item" v-for="(skill, id) in skills" :key="id">
+        <li class="skills-item" v-for="({ img, name }, id) in skills" :key="id">
           <div class="skills-languages" :class="`languages${1 + id}`">
             <img
               loading="lazy"
               class="skills-languages__img"
-              :src="skill.img"
+              :src="img"
               alt="html-icon"
             />
-            <h4 class="skills-languages__title">{{ skill.name }}</h4>
+            <h4 class="skills-languages__title">{{ name }}</h4>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="about-skills">
+      <header class="skills-experience">
+        <h3 class="skills-experience__title">currently learning</h3>
+      </header>
+      <ul class="skills-list">
+        <li class="skills-item" v-for="({ img, name }, id) in currentSkills" :key="id">
+          <div class="skills-languages" :class="`currentLanguages${1 + id}`">
+            <img
+              loading="lazy"
+              class="skills-languages__img"
+              :src="img"
+              alt="html-icon"
+            />
+            <h4 class="skills-languages__title">{{ name }}</h4>
           </div>
         </li>
       </ul>
@@ -59,23 +79,14 @@ const skills = ref<MySkills[]>([
   { img: "/assets/icons/typescript.svg", name: "TypeScript" },
   { img: "/assets/icons/vue.svg", name: "Vue" },
 ]);
+
+const currentSkills = ref<MySkills[]>([
+  { img: "/assets/icons/nuxt.svg", name: "Nuxt" },
+  { img: "/assets/icons/jest.svg", name: "Jest" },
+]);
 </script>
 
 <style lang="scss" scoped>
-@keyframes showLanguage {
-  0% {
-    transform: translateY(-5rem);
-    opacity: 0;
-  }
-  45% {
-    opacity: 0;
-  }
-  100% {
-    transform: translate(0);
-    opacity: 1;
-  }
-}
-
 .about-container {
   @media (width >= 768px) {
     display: flex;
@@ -165,10 +176,32 @@ const skills = ref<MySkills[]>([
   }
 }
 
+@keyframes showLanguages {
+  0% {
+    transform: translateY(-5rem);
+    opacity: 0;
+  }
+  45% {
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
 $languages: 5;
 @for $i from 1 through $languages {
   .languages#{$i} {
-    animation: showLanguage (0.2s * $i + 0.3) ease-in-out;
+    animation: showLanguages (0.2s * $i + 0.3) ease-in-out;
+  }
+}
+
+$currentLanguages: 2;
+@for $i from 1 through $currentLanguages {
+  .currentLanguages#{$i} {
+    opacity: 0;
+    animation: showLanguages (0.2s * $i + 0.3) 0.8s forwards;
   }
 }
 
