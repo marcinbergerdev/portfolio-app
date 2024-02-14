@@ -1,6 +1,8 @@
 <template>
   <div class="about-container">
+
     <header class="about-header">
+
       <h2 class="about-header__title">
         <img
           loading="lazy"
@@ -9,6 +11,10 @@
           alt="glasses"
         />about me
       </h2>
+
+  
+
+
       <p class="about-header__description">
         Driven by a deep curiosity for the world and technology, I am a dedicated
         individual with a relentless pursuit of knowledge. My patient and meticulous
@@ -16,9 +22,11 @@
         found. With a specialized focus on Vue.js, I bring creativity and innovation to
         every project. "only those who seek shall find"
       </p>
+
     </header>
 
     <section class="about-skills">
+
       <header class="skills-experience">
         <h3 class="skills-experience__title">my skills</h3>
       </header>
@@ -36,12 +44,16 @@
           </div>
         </li>
       </ul>
+
     </section>
 
     <section class="about-skills">
+
       <header class="skills-experience">
         <h3 class="skills-experience__title">currently learning</h3>
       </header>
+
+
       <ul class="skills-list">
         <li class="skills-item" v-for="({ img, name }, id) in currentSkills" :key="id">
           <div class="skills-languages" :class="`currentLanguages${1 + id}`">
@@ -55,11 +67,14 @@
           </div>
         </li>
       </ul>
+
     </section>
 
     <section class="about-start">
+
       <h5 class="about-start__title">start of learning</h5>
       <span class="about-start__date">27.05.2020</span>
+
     </section>
   </div>
 </template>
@@ -78,10 +93,10 @@ const skills = ref<MySkills[]>([
   { img: "/assets/icons/javascript.svg", name: "JavaScript" },
   { img: "/assets/icons/typescript.svg", name: "TypeScript" },
   { img: "/assets/icons/vue.svg", name: "Vue" },
+  { img: "/assets/icons/nuxt.svg", name: "Nuxt" },
 ]);
 
 const currentSkills = ref<MySkills[]>([
-  { img: "/assets/icons/nuxt.svg", name: "Nuxt" },
   { img: "/assets/icons/jest.svg", name: "Jest" },
 ]);
 </script>

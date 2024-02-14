@@ -20,13 +20,19 @@ import { ref } from "vue";
 
 const projects = ref<Projects[]>([
   {
+    title: "Calendar Manager",
+    description: "Plan your life",
+    img: "/assets/projects/calendar.png",
+    link: "https://calendar-menager.netlify.app",
+    languages: ["(HTML/CSS/SCSS)", "TypeScript", "Nuxt 3", "Unit Testing", "FireBase"],
+  },
+  {
     title: "Shopex",
     description: "Online Shop",
     img: "/assets/projects/shopex.png",
     link: "https://shoopdev.netlify.app/#/shop",
     languages: [
-      "HTML",
-      "CSS/SCSS",
+      "(HTML/CSS/SCSS)",
       "TypeScript",
       "Vue 3(Composition API, Routing, Transition, Pinia)",
       "FireBase",
@@ -38,8 +44,7 @@ const projects = ref<Projects[]>([
     img: "/assets/projects/fito.png",
     link: "https://fito-app.netlify.app/home",
     languages: [
-      "HTML",
-      "CSS/SCSS",
+      "(HTML/CSS/SCSS)",
       "TypeScript",
       "Vue(Option API, Routing,Transition,Vuex)",
       "FireBase",
@@ -51,8 +56,7 @@ const projects = ref<Projects[]>([
     img: "/assets/projects/quiz.png",
     link: "https://quizy-easy.netlify.app/start-quiz",
     languages: [
-      "HTML",
-      "CSS/SCSS",
+      "(HTML/CSS/SCSS)",
       "TypeScript",
       "Vue(Option API, Routing,Transition)",
       "Locale Storage",
@@ -63,7 +67,7 @@ const projects = ref<Projects[]>([
     description: "Collect best pictures",
     img: "/assets/projects/galerion.png",
     link: "https://galerion.netlify.app/home/random",
-    languages: ["HTML", "CSS/SCSS", "Vue(Option API,Routing)", "Axios", "Locale Storage"],
+    languages: ["(HTML/CSS/SCSS)", "Vue(Option API,Routing)", "Axios", "Locale Storage"],
   },
 ]);
 </script>

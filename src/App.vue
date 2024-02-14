@@ -20,8 +20,6 @@ import { defineAsyncComponent } from "vue";
 import BgParallax from "./components/animation/BgParallax.vue";
 const NavContainer = defineAsyncComponent(() => import("./components/nav/NavContainer.vue"));
 const HamburgerButton = defineAsyncComponent(() => import("./components/hamburger/HamburgerButton.vue"));
-
-
 </script>
 
 <style lang="scss">
