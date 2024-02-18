@@ -24,7 +24,7 @@ const projects = ref<Projects[]>([
     description: "Plan your life",
     img: "/assets/projects/calendar.png",
     link: "https://calendar-menager.netlify.app",
-    languages: ["(HTML/CSS/SCSS)", "TypeScript", "Nuxt 3", "Unit Testing", "FireBase"],
+    languages: ["(HTML/CSS/SCSS)", "TypeScript", "Nuxt 3", "FireBase"],
   },
   {
     title: "Shopex",
