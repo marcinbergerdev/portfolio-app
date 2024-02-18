@@ -97,6 +97,7 @@ const skills = ref<MySkills[]>([
 ]);
 
 const currentSkills = ref<MySkills[]>([
+  { img: "/assets/icons/nodejs.svg", name: "Node.js" },
   { img: "/assets/icons/jest.svg", name: "Jest" },
 ]);
 </script>
